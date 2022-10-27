@@ -1,0 +1,23 @@
+package ddddd;
+import java.util.Scanner;
+public class d75 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner kon=new Scanner(System.in);
+		int n=kon.nextInt();
+		int ch=0,nech=0,b=1;
+		while (n/10>0) 
+		{
+			if(b%2==0)ch=ch+n%10;
+			else nech=nech+n%10;
+			n=n/10;
+			b++;
+		}
+		if(b%2==0)ch=ch+n%10;
+		else nech=nech+n%10;
+		if(nech==ch)System.out.println("DA");
+		else System.out.println("NO "+Math.abs(nech-ch));
+	}
+
+}
