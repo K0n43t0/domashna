@@ -1,0 +1,28 @@
+package ddddd;
+import java.util.Scanner;
+public class d74 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner kon=new Scanner(System.in);
+int s=kon.nextInt(),e=kon.nextInt();
+for(int i=s;i<=e;i++)
+{
+	int ed=0,p=i;
+	boolean da=false;
+	while(p/10>0) 
+		
+		{
+			if(p%10==1)ed++;
+			else ed=0;
+			p=p/10;
+			if (ed==3)da=true;
+		}
+	
+	if(p%10==1)ed++;
+	if (ed==3)da=true;
+	if(da==true)System.out.println(i);
+}
+	}
+
+}
