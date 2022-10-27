@@ -1,0 +1,35 @@
+package ddddd;
+import java.util.Scanner;
+public class d76 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner kon=new Scanner(System.in);
+		int n=kon.nextInt();
+		float m=0,k=0,v=0;
+		int sum=0,mp=0,kp=0,vp=0;
+		float sr;
+		for (int i=0;i<n;i++) {
+			int tov=kon.nextInt();
+			if (tov<=3) 
+			{
+				m=m+tov;
+				mp=mp+tov*200;
+			}
+			else if(tov<=11) 
+			{
+				k=tov+k;
+				kp=kp+tov*175;
+			}
+			else {v=tov+v;
+			vp=vp+tov*120;}
+			sum=sum+tov;
+		}
+		sr=(mp+kp+vp)/sum;
+		System.out.println(sr);
+		System.out.println(m/sum*100);
+		System.out.println(k/sum*100);
+		System.out.println(v/sum*100);
+	}
+
+}
