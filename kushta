@@ -9,42 +9,40 @@ public class d77 {
 Scanner sc=new Scanner(System.in);
 int n=sc.nextInt();
 int d=0;
-int p=0;
-if(n%2==0) 
-{
+int p=0;//kolko zvezdi da imam na pokriva
+if(n%2==0) {//opredelqm kolko reda da mi e pokriva i zvezdi za purvi red na pokriva
 	d=n/2;
 	p=2;
 }
-else 
-{
+else {
 	d=n/2+1;
 	p=1;
 }
-for(int i=1;i<=d;i++) 
+for(int i=1;i<=d;i++) //nz kak po dobre da napravq tozi for
 {
-	  for(int j=1;j<=(n-p)/2;j++) 
-    {
+		for(int j=1;j<=(n-p)/2;j++) //for za - predi zvezdite
+		{
 		System.out.print("-");
-	  }
-  	for(int j=1;j<=p;j++) 
-    {
+		}
+		for(int j=1;j<=p;j++) //for za zvezdite
+		{
 		System.out.print("*");
-    }
-	  for(int j=1;j<=(n-p)/2;j++) 
-    {
+		}
+		for(int j=1;j<=(n-p)/2;j++) //for za - sledzvezdite
+		{
 		System.out.print("-");
-	  }
-	p+=2;
+		}
+	p+=2;//poveche zvezdi za sledvashtiq red
 	System.out.println();
 }
 for(int i=1;i<=n-d;i++) 
 {
-	  System.out.print("|");
-	  for(int j=1;j<=n-2;j++) 
-   {
-		System.out.print("*");
-	  }
-	  System.out.println("|");
+	System.out.print("|");
+	for(int j=1;j<=n-2;j++) //for za zvezdite v tqloto na kushtata
+		{
+			System.out.print("*");
+		}
+	System.out.println("|");
 	
 }
 	}
