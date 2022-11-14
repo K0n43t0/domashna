@@ -1,0 +1,48 @@
+package ddddd;
+
+import java.util.Scanner;
+
+public class d79 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+int z1,z2;
+if(n%2==0) {
+	z1=n/2;
+	z2=n/2+1;
+}
+else
+{
+z1=n/2+1;
+z2=z1;
+}
+if(n%2==1) 
+{
+  for(int j=1;j<=n;j++) 
+  {
+	for(int i=1;i<=n;i++) 
+      {
+	      if(i==z1||i==z2)System.out.print("*");
+	      else System.out.print("-");
+     }
+	if(j<(n+1)/2) {z1--;z2++;}
+	else {z1++;z2--;}
+	System.out.println();
+  } 
+}
+else {
+  for(int j=1;j<n;j++) 
+  {
+	    for(int i=1;i<=n;i++) 
+      {
+      	if(i==z1||i==z2)System.out.print("*");
+    	  else System.out.print("-");
+     }
+   	if(j<(n+1)/2) {z1--;z2++;}
+	  else {z1++;z2--;}
+  	System.out.println();}
+	}
+
+}}
