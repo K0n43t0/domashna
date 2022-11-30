@@ -1,0 +1,23 @@
+package ddddd;
+
+import java.util.Scanner;
+
+public class d80 {
+public static void lice(double a,double b, double h) 
+{
+double area=(a+b)*h/2;
+System.out.println(area);
+}
+public static double lice2(double a,double b, double h) {
+	double area=(a+b)*h/2;
+	return area;
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in); 
+		double a=sc.nextDouble(),b=sc.nextDouble(),h=sc.nextDouble();
+		lice(a,b,h);
+		System.out.println(lice2(a,b,h));
+	}
+
+}
