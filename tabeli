@@ -1,0 +1,29 @@
+package ddddd;
+
+import java.util.Scanner;
+
+public class d81 {
+public static int tabeli(int n) 
+{
+	int br=0;  //broqch
+	for (int i=1;i<=n;i++) {
+		boolean d=false;//boolean za proverka dali chisloto sudurja 2
+		int j=i;//promenliva za razpadane
+		while(j/10>0) {//razpadane na chislo
+			if(j%10==2)d=true;//proverka dali sudurja 2
+			j/=10;
+			
+		}
+		if(j%10==2)d=true;
+		if (d==true)br++;//ako chisloto ima 2 da se uvelichi broqcha
+	}
+	return br;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+System.out.println(tabeli(n));
+	}
+
+}
