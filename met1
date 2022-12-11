@@ -1,0 +1,34 @@
+package ddddd;
+
+import java.util.Scanner;
+
+public class d82 {
+public static void in(double [] ar) {
+	Scanner sc=new Scanner(System.in);
+	for(int i=0;i<ar.length;i++) {
+		ar[i]=sc.nextDouble();
+	}
+}
+public static void out(double [] ar) {
+	for(int i=0;i<ar.length;i++)System.out.println(ar[i]);
+}
+public static void ar(double [] ar) {
+	double sum=0;
+	int br=0;
+	for(int i=0;i<ar.length;i++)sum+=ar[i];
+	sum=sum/ar.length;
+	for(int i=0;i<ar.length;i++) {if(ar[i]>sum)br++;}
+	System.out.println("broq e "+br);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt(); 
+double [] ar= new double[n];
+in(ar);
+out(ar);
+ar(ar);
+	}
+
+}
