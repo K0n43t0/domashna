@@ -1,0 +1,30 @@
+package ddddd;
+
+import java.util.Scanner;
+
+public class d83 {
+public static int chis(int n) 
+{
+	int br=0;
+	for(int i=1;i<=n;i++) {
+		boolean i3=false,i4=false,i13=false;
+	int j=i;
+	while(j>0) {
+		if(j%10==4)i4=true;
+		if(j%10==3)i3=true;
+		if(j%10==1&&i3==true)i13=true;
+		j/=10;
+	}
+	if(i13==true||i4==true)br++;
+	}
+	
+	return br;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+System.out.println(chis(n));
+	}
+
+}
