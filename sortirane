@@ -1,0 +1,53 @@
+package ddddd;
+
+import java.util.Scanner;
+
+public class d84 {
+	public static void inp(double [] arr) {
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<arr.length;i++)arr[i]=sc.nextDouble();
+	}
+	public static void out(double [] arr) {
+		
+		for(int i=0;i<arr.length;i++)System.out.print(arr[i]+" ");
+	}
+	public static void sum(double [] arr) { //suma na purvite otricatelni chisla
+		boolean ot=false;
+		double sum=0;
+		for(int i=0;i<arr.length;i++) 
+		{
+			if(arr[i]<0&&ot==false) sum+=arr[i];
+			else ot=true;
+		}
+		System.out.println();
+		System.out.println(sum);
+	}
+	public static void sort(double [] arr) {
+		double b=arr[0];
+		for(int i=0;i<arr.length;i++) 
+		{
+			for(int j=0;j<arr.length;j++) 
+			{
+				if(arr[j]>arr[i]) 
+				{
+				b=arr[i];
+				arr[i]=arr[j];
+				arr[j]=b;
+				}
+			}
+		}
+		for(int i=0;i<arr.length;i++)System.out.print(arr[i]+" ");
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+double [] a=new double[n];
+inp(a);
+out(a);
+sum(a);
+sort(a);
+	}
+
+}
