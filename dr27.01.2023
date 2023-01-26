@@ -30,7 +30,8 @@ public static void ave(double [][] matr) {
 				}
 			}
 		}
-	System.out.println("srednoto e "+sum/br);
+	if(br>0)System.out.println("srednoto e "+sum/br);
+	else System.out.println("nqma polojitelni chisla");
 }
 public static void sminmax(double [][] matr) {
 	double  min=matr[0][0],max=matr[0][0];
