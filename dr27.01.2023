@@ -1,0 +1,57 @@
+package ddddd;
+
+import java.util.Scanner;
+
+public class d88 {
+public static void inp(double [][] matr) {
+	Scanner sc=new Scanner(System.in);
+	for (int i=0;i<matr.length;i++) {
+		for(int j=0;j<matr[i].length;j++) {
+			matr[i][j]=sc.nextDouble();
+		}
+	}
+	
+}
+public static void out(double [][] matr) {
+	for (int i=0;i<matr.length;i++) {
+		for(int j=0;j<matr[i].length;j++) {
+			System.out.println("matr["+i+"]["+j+"] = "+matr[i][j]);
+			}
+		}
+}
+public static void ave(double [][] matr) {
+	int br=0;
+	double sum=0;
+	for (int i=0;i<matr.length;i++) {
+		for(int j=0;j<matr[i].length;j++) {
+			if(matr[i][j]>0) {
+				br++;
+				sum+=matr[i][j];
+				}
+			}
+		}
+	System.out.println("srednoto e "+sum/br);
+}
+public static void sminmax(double [][] matr) {
+	double  min=matr[0][0],max=matr[0][0];
+	for (int i=0;i<matr.length;i++) {
+		for(int j=0;j<matr[i].length;j++) {
+			if(min>matr[i][j])min=matr[i][j];
+			if(max<matr[i][j])max=matr[i][j];
+			}
+		}
+	double s=min+max;
+	System.out.println("sumata e "+ s);
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		double [][]matr=new double [n][n];
+		inp(matr);
+		out(matr);
+		ave(matr);
+		sminmax(matr);
+	}
+
+}
