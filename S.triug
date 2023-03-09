@@ -1,0 +1,105 @@
+package gd;
+
+import java.awt.Dialog;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.awt.Font;  
+public class das extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField tfa;
+	private JTextField tfb;
+	private JTextField tfc;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					das frame = new das();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public das() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 173, 189);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		tfa = new JTextField();
+		tfa.setBounds(44, 21, 96, 19);
+		contentPane.add(tfa);
+		tfa.setColumns(10);
+		
+		tfb = new JTextField();
+		tfb.setBounds(44, 50, 96, 19);
+		contentPane.add(tfb);
+		tfb.setColumns(10);
+		
+		tfc = new JTextField();
+		tfc.setBounds(44, 79, 96, 19);
+		contentPane.add(tfc);
+		tfc.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("a=");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel.setBounds(10, 24, 24, 13);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblB = new JLabel("b=");
+		lblB.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblB.setBounds(10, 53, 24, 13);
+		contentPane.add(lblB);
+		
+		JLabel lblC = new JLabel("c=");
+		lblC.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblC.setBounds(10, 82, 24, 13);
+		contentPane.add(lblC);
+		
+		JButton btnNewButton = new JButton("Presmetni");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double a=Double.parseDouble(tfa.getText());
+				double b=Double.parseDouble(tfb.getText());
+				double c=Double.parseDouble(tfc.getText());
+				double P=a+b+c;
+				double p=P/2;
+				double S=Math.sqrt(p*(p-a)*(p-b)*(p-c));
+				String d;
+				if(a==b&&b==c)d="Ravnostranen";
+				else if(a!=b&&a!=c&&b!=c)d="Raznostranen";
+				else d="Ravnobedren";
+				BigDecimal bd=new BigDecimal(S).setScale(2, RoundingMode.HALF_UP);  ;
+				double Z = bd.doubleValue(); 
+				JOptionPane.showMessageDialog(null, "Obikolkata e "+P+" vida na triugulnika e "+d+" i liceto e ravno na "+ Z);
+			}
+		});
+		btnNewButton.setBounds(44, 120, 85, 21);
+		contentPane.add(btnNewButton);
+	}
+}
