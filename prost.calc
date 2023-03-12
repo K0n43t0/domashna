@@ -1,0 +1,154 @@
+package gd;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class das1 extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField ta;
+	private JTextField tb;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					das1 frame = new das1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public das1() {
+		setTitle("prost calc\r\n");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 283, 175);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("A:");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel.setBounds(36, 20, 45, 13);
+		contentPane.add(lblNewLabel);
+		
+		ta = new JTextField();
+		ta.setBounds(63, 19, 50, 19);
+		contentPane.add(ta);
+		ta.setColumns(10);
+		
+		JLabel lblB = new JLabel("B:");
+		lblB.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblB.setBounds(134, 20, 45, 13);
+		contentPane.add(lblB);
+		
+		tb = new JTextField();
+		tb.setColumns(10);
+		tb.setBounds(154, 19, 50, 19);
+		contentPane.add(tb);
+		
+		JButton btnNewButton = new JButton("A+B");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double a=Double.parseDouble(ta.getText());
+				 double b=Double.parseDouble(tb.getText());
+				double p=a+b;
+		
+		String t=Double.toString(p);
+		JOptionPane.showMessageDialog(null, t);
+			}
+		});
+		btnNewButton.setBounds(21, 53, 60, 21);
+		contentPane.add(btnNewButton);
+		
+		JButton btnAb = new JButton("A-B");
+		btnAb.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double a=Double.parseDouble(ta.getText());
+				 double b=Double.parseDouble(tb.getText());
+				double p=a-b;
+		
+		String t=Double.toString(p);
+		JOptionPane.showMessageDialog(null, t);
+			}
+		});
+		btnAb.setBounds(100, 53, 60, 21);
+		contentPane.add(btnAb);
+		
+		JButton btnAb_1 = new JButton("A*B");
+		btnAb_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double a=Double.parseDouble(ta.getText());
+				 double b=Double.parseDouble(tb.getText());
+				double p=a*b;
+		
+		String t=Double.toString(p);
+		JOptionPane.showMessageDialog(null, t);
+			}
+		});
+		btnAb_1.setBounds(179, 53, 60, 21);
+		contentPane.add(btnAb_1);
+		
+		JButton btnAb_2 = new JButton("A/B");
+		btnAb_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double a=Double.parseDouble(ta.getText());
+				 double b=Double.parseDouble(tb.getText());
+				double p=a/b;
+		
+		String t=Double.toString(p);
+		JOptionPane.showMessageDialog(null, t);
+			}
+		});
+		btnAb_2.setBounds(21, 84, 60, 21);
+		contentPane.add(btnAb_2);
+		
+		JButton btnAb_2_1 = new JButton("A^B");
+		btnAb_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double a=Double.parseDouble(ta.getText());
+				 double b=Double.parseDouble(tb.getText());
+				double p=Math.pow(a, b);		
+		String t=Double.toString(p);
+		JOptionPane.showMessageDialog(null, t);
+			}
+		});
+		btnAb_2_1.setBounds(100, 84, 60, 21);
+		contentPane.add(btnAb_2_1);
+		
+		JButton btnAb_2_1_1 = new JButton("AVE");
+		btnAb_2_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double a=Double.parseDouble(ta.getText());
+				 double b=Double.parseDouble(tb.getText());
+				double p=(a+b)/2;		
+		String t=Double.toString(p);
+		JOptionPane.showMessageDialog(null, t);
+			}
+		});
+		btnAb_2_1_1.setBounds(179, 84, 60, 21);
+		contentPane.add(btnAb_2_1_1);
+	}
+}
