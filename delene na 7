@@ -1,0 +1,135 @@
+package gd;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+
+public class das2 extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField tc;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					das2 frame = new das2();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public das2() {
+		setTitle("\u0414\u0435\u043B\u0435\u043D\u0438\u0435 \u043D\u0430 7\r\n");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 501, 263);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("\u0412\u044A\u0432\u0435\u0434\u0438 \u0446\u044F\u043B\u043E \u0447\u0438\u0441\u043B\u043E:");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel.setBounds(20, 38, 164, 13);
+		contentPane.add(lblNewLabel);
+		
+		tc = new JTextField();
+		tc.setBounds(167, 36, 96, 19);
+		contentPane.add(tc);
+		tc.setColumns(10);
+		
+		JLabel l1 = new JLabel("\u0427\u0438\u0441\u043B\u0430\u0442\u0430 \u0434\u0435\u043B\u044F\u0449\u0438 \u0441\u0435 \u043D\u0430 7 \u0431\u0435\u0437 \u043E\u0441\u0442\u0430\u0442\u044A\u043A \u0441\u0430:");
+		l1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		l1.setBounds(20, 73, 242, 13);
+		contentPane.add(l1);
+		
+		JLabel lblNewLabel_1 = new JLabel("\u0421\u0443\u043C\u0430\u0442\u0430 \u043D\u0430 \u0447\u0438\u0441\u043B\u0430\u0442\u0430 \u0435:");
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(20, 108, 137, 13);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("\u041F\u0440\u043E\u0438\u0437\u0432\u0435\u0434\u0435\u043D\u0438\u0435\u0442\u043E \u043D\u0430 \u0447\u0438\u0441\u043B\u0430\u0442\u0430 \u0435:");
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(20, 148, 186, 13);
+		contentPane.add(lblNewLabel_2);
+		
+		final JLabel l2 = new JLabel("");
+		l2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		l2.setBounds(275, 73, 179, 13);
+		contentPane.add(l2);
+		
+		final JLabel l3 = new JLabel("");
+		l3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		l3.setBounds(275, 108, 179, 13);
+		contentPane.add(l3);
+		
+		final JLabel l4 = new JLabel("");
+		l4.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		l4.setBounds(275, 148, 179, 13);
+		contentPane.add(l4);
+		
+		JButton btnNewButton = new JButton("\u041F\u0440\u0435\u0441\u043C\u0435\u0442\u043D\u0438");
+		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int n=Integer.parseInt(tc.getText());
+				int []arr=new int[n/7];
+				int proizv=1,sum=0;
+				for(int i=0;i<arr.length;i++)arr[i]=(i+1)*7;
+				String chisla="";
+				for(int i=0;i<arr.length;i++) {chisla=chisla+arr[i]+" ";
+				sum+=arr[i];
+				proizv*=arr[i];}
+				l2.setText(chisla);
+				l3.setText(Integer.toString(sum));
+				l4.setText(Integer.toString(proizv));
+				if(n<=6) {
+					l2.setText("");
+					l3.setText("");
+					l4.setText("");
+				}
+			}
+		});
+		btnNewButton.setBounds(45, 191, 107, 21);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("\u0418\u0437\u0447\u0438\u0441\u0442\u0438");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {tc.setText("");
+			l2.setText("");
+			l3.setText("");
+			l4.setText("");
+			}
+		});
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton_1.setBounds(197, 191, 112, 21);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("\u0418\u0437\u0445\u043E\u0434");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {System.exit(0);
+			}
+		});
+		btnNewButton_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton_2.setBounds(354, 192, 85, 21);
+		contentPane.add(btnNewButton_2);
+	}
+}
