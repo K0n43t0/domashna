@@ -1,0 +1,83 @@
+package gd;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.image.*;
+import java.util.Random;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+public class das3 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					das3 frame = new das3();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public das3() {
+		setTitle("Prolet");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 725, 497);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		final JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.ITALIC, 14));
+		lblNewLabel.setBounds(248, 28, 210, 13);
+		contentPane.add(lblNewLabel);
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		final JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			Icon icon2 = new ImageIcon("D:\\New folder\\prolet2.jpg");
+			Icon icon3 = new ImageIcon("D:\\New folder\\prolet3.png");
+			Icon icon4 = new ImageIcon("D:\\New folder\\prolet4.jpg");
+			Random rn=new Random();
+			int fas=rn.nextInt(4);
+			if(fas==1)btnNewButton.setIcon(icon2);
+			if(fas==2)btnNewButton.setIcon(icon3);
+			if(fas==3)btnNewButton.setIcon(icon4);
+			lblNewLabel.setText("Chestita prolet, budete zdravi");
+			}
+		});
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setIcon(new ImageIcon("D:\\New folder\\prolet1.jpg"));
+		btnNewButton.setBounds(45, 70, 613, 380);
+		contentPane.add(btnNewButton);
+		
+		
+	}
+}
