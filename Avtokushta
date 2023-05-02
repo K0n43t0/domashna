@@ -1,0 +1,298 @@
+package gd;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.SwingConstants;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.EtchedBorder;
+import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.UIManager;
+import javax.swing.JToggleButton;
+
+public class das4 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					das4 frame = new das4();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public das4() {
+		setTitle("\u0410\u0432\u0442\u043E\u043A\u044A\u0449\u0430");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 659, 316);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("\u043C\u0430\u0440\u043A\u0430");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel.setBounds(24, 26, 45, 13);
+		contentPane.add(lblNewLabel);
+		
+		final JComboBox cMarka = new JComboBox();
+		lblNewLabel.setLabelFor(cMarka);
+		cMarka.setModel(new DefaultComboBoxModel(new String[] {"", "\u0410\u0443\u0434\u0438", "\u0411\u041C\u0412", "\u0412\u043E\u043B\u0432\u043E", "\u0414\u0430\u0447\u0438\u044F", "\u041C\u0435\u0440\u0446\u0435\u0434\u0435\u0441", "\u041D\u0438\u0441\u0430\u043D", "\u041E\u043F\u0435\u043B", "\u0421\u0438\u0442\u0440\u043E\u0435\u043D", "\u0422\u043E\u0439\u043E\u0442\u0430", "\u0424\u0438\u0430\u0442", "\u0424\u043E\u0440\u0434", "\u0425\u043E\u043D\u0434\u0430 ", "\u0428\u043A\u043E\u0434\u0430"}));
+		cMarka.setToolTipText("\u0410\u0443\u0434\u0438\r\n\u0411\u041C\u0412\r\n\u0412\u043E\u043B\u0432\u043E\r\n\u0414\u0430\u0447\u0438\u044F\r\n\u041C\u0435\u0440\u0446\u0435\u0434\u0435\u0441\r\n\u041D\u0438\u0441\u0430\u043D\r\n\u041E\u043F\u0435\u043B\r\n\u0421\u0438\u0442\u0440\u043E\u0435\u043D\r\n\u0422\u043E\u0439\u043E\u0442\u0430\r\n\u0424\u0438\u0430\u0442\r\n\u0424\u043E\u0440\u0434\r\n\u0425\u043E\u043D\u0434\u0430 \r\n\u0428\u043A\u043E\u0434\u0430");
+		cMarka.setBounds(200, 23, 145, 20);
+		contentPane.add(cMarka);
+		
+		JLabel lblNewLabel_1 = new JLabel("\u0433\u043E\u0434\u0438\u043D\u0438");
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(24, 49, 45, 13);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("\u043A\u0438\u043B\u043E\u043C\u0435\u0442\u0440\u0438");
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(24, 72, 66, 13);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("\u0446\u0432\u044F\u0442");
+		lblNewLabel_3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_3.setBounds(24, 95, 45, 13);
+		contentPane.add(lblNewLabel_3);
+		
+		final JComboBox cGod = new JComboBox();
+		cGod.setModel(new DefaultComboBoxModel(new String[] {"", "\u041D\u043E\u0432\u0430", "\u041D\u0430 1 \u0433\u043E\u0434\u0438\u043D\u0430", "1-5 \u0433\u043E\u0434\u0438\u043D\u0438", "5-15 \u0433\u043E\u0434\u0438\u043D\u0438", "\u0421\u0442\u0430\u0440\u0430"}));
+		cGod.setBounds(200, 46, 145, 20);
+		contentPane.add(cGod);
+		
+		final JComboBox cKilo = new JComboBox();
+		cKilo.setModel(new DefaultComboBoxModel(new String[] {"", "<10000", "10000-50000", "50000-250000", "250000+"}));
+		cKilo.setBounds(200, 69, 145, 20);
+		contentPane.add(cKilo);
+		
+		final JComboBox cCvqt = new JComboBox();
+		cCvqt.setModel(new DefaultComboBoxModel(new String[] {"", "\u0437\u0435\u043B\u043D\u0430", "\u0441\u0438\u043D\u044F", "\u0447\u0435\u0440\u0432\u0435\u043D\u0430", "\u0447\u0435\u0440\u043D\u0430", "\u0441\u0432\u0435\u0442\u043B\u043E \u0441\u0438\u0432\u0430", "\u0442\u044A\u043C\u043D\u043E \u0441\u0438\u0432\u0430", "\u0431\u044F\u043B\u0430", "\u043E\u0440\u0430\u043D\u0436\u0435\u0432\u0430", "\u0436\u044A\u043B\u0442\u0430", "\u043B\u0438\u043B\u0430\u0432\u0430", "\u043A\u0430\u0444\u044F\u0432\u0430", "\u0440\u043E\u0437\u043E\u0432\u0430"}));
+		cCvqt.setBounds(200, 92, 145, 20);
+		contentPane.add(cCvqt);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "\u0411\u0435\u043B\u0435\u0436\u043A\u0438", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel.setBounds(355, 10, 267, 262);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel_5 = new JLabel("\t10% \u043E\u0442\u0441\u0442\u044A\u043F\u043A\u0430 \u043D\u0430 \u0447\u0435\u0440\u0432\u0435\u043D\u0438 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438.");
+		lblNewLabel_5.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_5.setBounds(10, 15, 247, 25);
+		panel.add(lblNewLabel_5);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "\u041E\u0442\u0441\u0442\u044A\u043F\u043A\u0438 \u0441\u0432\u044A\u0440\u0437\u0430\u043D\u0438 \u0441 \u043A\u0438\u043B\u043E\u043C\u0435\u0442\u0440\u0430\u0436\u0430", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_1.setBounds(10, 50, 247, 78);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_6 = new JLabel("10000 - 50000 - 3% ");
+		lblNewLabel_6.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_6.setBounds(10, 20, 135, 19);
+		panel_1.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("50000 - 250000\t - 15%");
+		lblNewLabel_7.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_7.setBounds(10, 38, 135, 19);
+		panel_1.add(lblNewLabel_7);
+		
+		JLabel lblNewLabel_8 = new JLabel("250000+ - 20%");
+		lblNewLabel_8.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_8.setBounds(10, 55, 135, 19);
+		panel_1.add(lblNewLabel_8);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "\u041E\u0442\u0441\u0442\u044A\u043F\u043A\u0438 \u0441\u0432\u044A\u0440\u0437\u0430\u043D\u0438 \u0441 \u0433\u043E\u0434\u0438\u043D\u0438", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_2.setBounds(10, 138, 247, 114);
+		panel.add(panel_2);
+		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel_4 = new JLabel("1 \u0433\u043E\u0434\u0438\u043D\u0430 - 2%");
+		lblNewLabel_4.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_4.setBounds(10, 10, 178, 24);
+		panel_2.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_9 = new JLabel("1-5 \u0433\u043E\u0434\u0438\u043D\u0438 - 5%");
+		lblNewLabel_9.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_9.setBounds(10, 33, 178, 24);
+		panel_2.add(lblNewLabel_9);
+		
+		JLabel lblNewLabel_10 = new JLabel("5-15 \u0433\u043E\u0434\u0438\u043D\u0438 - 12%");
+		lblNewLabel_10.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_10.setBounds(10, 58, 178, 24);
+		panel_2.add(lblNewLabel_10);
+		
+		JLabel lblNewLabel_11 = new JLabel("\u0421\u0442\u0430\u0440\u0430 - 20%");
+		lblNewLabel_11.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_11.setBounds(10, 80, 178, 24);
+		panel_2.add(lblNewLabel_11);
+		
+		JButton btnNewButton = new JButton("\u041F\u043E\u0440\u044A\u0447\u043A\u0430");
+		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Cherven e 3 index
+				double cena= 30000;
+				if(cCvqt.getSelectedIndex()==3)cena*=0.9;   //namalenie za cherveni
+				
+				switch (cGod.getSelectedIndex())  //namalenie sprqmo godinite na kolata
+				{
+					case 2:cena*=0.98;break;
+					case 3:cena*=0.95;break;
+					case 4:cena*=0.88;break;
+					case 5:cena*=0.80;break;
+				}
+				switch (cKilo.getSelectedIndex())  //namalenie sprqmo kilometraja
+				{
+					case 2:cena*=0.97;break;
+					case 3:cena*=0.85;break;
+					case 4:cena*=0.80;break;
+				}
+				if(cMarka.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете марка.");
+				if(cGod.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете години.");
+				if(cKilo.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете километри за километража.");
+				if(cCvqt.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете цвят.");
+				if(cMarka.getSelectedIndex()!=0&&cGod.getSelectedIndex()!=0&&cKilo.getSelectedIndex()!=0&&cCvqt.getSelectedIndex()!=0) 
+				{
+					String God="",Kilo="";
+					
+					switch (cGod.getSelectedIndex()) 
+					{
+					case 1:God="нова ";break;
+					case 2:God="сравнително нова ";break;
+					case 3:God="не много стара" ;break;
+					case 4:God="остаряла ";break;
+					case 5:God="стара ";break;
+					}
+					switch (cKilo.getSelectedIndex()) 
+					{
+					case 1:Kilo="неизползвана";break;
+					case 2:Kilo="малко използвана";break;
+					case 3:Kilo="използана";break;
+					case 4:Kilo="много използвана";break;
+					}
+				JOptionPane.showMessageDialog(null, "Вие избрахте "+God+"кола, която е марка "+cMarka.getSelectedItem()+" и е "+Kilo+" и "+ cCvqt.getSelectedItem()+" на цена "+cena);
+				}
+				
+			}
+		});
+		
+		btnNewButton.setBounds(24, 126, 129, 21);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("\u0418\u0437\u0447\u0438\u0441\u0442\u0438");
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			cMarka.setSelectedIndex(0);
+			cCvqt.setSelectedIndex(0);
+			cKilo.setSelectedIndex(0);
+			cGod.setSelectedIndex(0);
+			}
+		});
+		btnNewButton_1.setBounds(24, 188, 129, 21);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("\u0418\u0437\u0445\u043E\u0434");
+		btnNewButton_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {System.exit(0);
+			}
+		});
+		btnNewButton_2.setBounds(24, 157, 129, 21);
+		contentPane.add(btnNewButton_2);
+		
+	
+		
+		final JLabel lblNewLabel_12 = new JLabel("\u0418\u0437\u043F\u043B\u0430\u0449\u0430\u043D\u0435");
+		lblNewLabel_12.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_12.setBounds(240, 130, 75, 13);
+		contentPane.add(lblNewLabel_12);
+		
+		final JComboBox cIz = new JComboBox();
+		cIz.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		cIz.setModel(new DefaultComboBoxModel(new String[] {"", "6 \u043C\u0435\u0441\u0435\u0446\u0430", "1 \u0433\u043E\u0434\u0438\u043D\u0430", "2 \u0433\u043E\u0434\u0438\u043D\u0438", "3 \u0433\u043E\u0434\u0438\u043D\u0438", "4 \u0433\u043E\u0434\u0438\u043D\u0438", "5 \u0433\u043E\u0434\u0438\u043D\u0438"}));
+		cIz.setBounds(200, 153, 145, 20);
+		contentPane.add(cIz);
+		lblNewLabel_12.setVisible(false);
+		cIz.setVisible(false);
+		JButton btnNewButton_3 = new JButton("\u043D\u0430 \u0438\u0437\u043F\u043B\u0430\u0449\u0430\u043D\u0435");
+		btnNewButton_3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cIz.setVisible(true);
+				lblNewLabel_12.setVisible(true);
+				double cena= 30000;
+				if(cCvqt.getSelectedIndex()==3)cena*=0.9;
+				
+				switch (cGod.getSelectedIndex()) 
+				{
+					case 2:cena*=0.98;break;
+					case 3:cena*=0.95;break;
+					case 4:cena*=0.88;break;
+					case 5:cena*=0.80;break;
+				}
+				switch (cKilo.getSelectedIndex()) 
+				{
+					case 2:cena*=0.97;break;
+					case 3:cena*=0.85;break;
+					case 4:cena*=0.80;break;
+				}
+				double izplashtane=0;
+				switch (cIz.getSelectedIndex())   //izchislqvane na izplashtaneto
+				{
+					case 1:izplashtane=cena/6;break;
+					case 2:izplashtane=cena/12;break;
+					case 3:izplashtane=cena/24;break;
+					case 4:izplashtane=cena/36;break;
+					case 5:izplashtane=cena/48;break;
+					case 6:izplashtane=cena/60;break;
+				}
+				if(cMarka.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете марка.");
+				if(cGod.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете години.");
+				if(cKilo.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете километри за километража.");
+				if(cCvqt.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете цвят.");
+				if(cIz.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете изплащане.");
+				double roundOff = Math.round(izplashtane * 100.0) / 100.0;    //zakruglqne
+				if(cMarka.getSelectedIndex()!=0&&cGod.getSelectedIndex()!=0&&cKilo.getSelectedIndex()!=0&&cCvqt.getSelectedIndex()!=0&&cIz.getSelectedIndex()!=0) 
+				{
+				JOptionPane.showMessageDialog(null,"Цената е "+roundOff+" на месец за "+cIz.getSelectedItem());
+				}
+			}
+		});
+		btnNewButton_3.setBounds(24, 219, 129, 21);
+		contentPane.add(btnNewButton_3);
+		
+	}
+}
