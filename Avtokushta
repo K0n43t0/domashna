@@ -183,7 +183,8 @@ public class das4 extends JFrame {
 				if(cGod.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете години.");
 				if(cKilo.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете километри за километража.");
 				if(cCvqt.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете цвят.");
-				if(cMarka.getSelectedIndex()!=0&&cGod.getSelectedIndex()!=0&&cKilo.getSelectedIndex()!=0&&cCvqt.getSelectedIndex()!=0) 
+				if(cGod.getSelectedIndex()==1&&cKilo.getSelectedIndex()!=1)JOptionPane.showMessageDialog(null, "Нова кола не може да бъде карана");
+				if((cGod.getSelectedIndex()==1&&cKilo.getSelectedIndex()==1)&&cMarka.getSelectedIndex()!=0&&cGod.getSelectedIndex()!=0&&cKilo.getSelectedIndex()!=0&&cCvqt.getSelectedIndex()!=0) 
 				{
 					String God="",Kilo="";
 					
@@ -284,8 +285,9 @@ public class das4 extends JFrame {
 				if(cKilo.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете километри за километража.");
 				if(cCvqt.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете цвят.");
 				if(cIz.getSelectedIndex()==0)JOptionPane.showMessageDialog(null, "Изберете изплащане.");
+				if(cGod.getSelectedIndex()==1&&cKilo.getSelectedIndex()!=1)JOptionPane.showMessageDialog(null, "Нова кола не може да бъде карана");
 				double roundOff = Math.round(izplashtane * 100.0) / 100.0;    //zakruglqne
-				if(cMarka.getSelectedIndex()!=0&&cGod.getSelectedIndex()!=0&&cKilo.getSelectedIndex()!=0&&cCvqt.getSelectedIndex()!=0&&cIz.getSelectedIndex()!=0) 
+				if((cGod.getSelectedIndex()==1&&cKilo.getSelectedIndex()==1)&&cMarka.getSelectedIndex()!=0&&cGod.getSelectedIndex()!=0&&cKilo.getSelectedIndex()!=0&&cCvqt.getSelectedIndex()!=0&&cIz.getSelectedIndex()!=0) 
 				{
 				JOptionPane.showMessageDialog(null,"Цената е "+roundOff+" на месец за "+cIz.getSelectedItem());
 				}
