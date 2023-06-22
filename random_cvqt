@@ -1,0 +1,213 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Random;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
+import javax.swing.SwingConstants;
+import java.awt.Checkbox;
+
+
+public class das7 extends JFrame {
+protected boolean goshko=true;
+protected JButton but2 = new JButton("\u0447\u0435\u0440\u0432\u0435\u043D\u043E");
+protected JButton but3 = new JButton("\u0437\u0435\u043B\u0435\u043D\u043E");
+protected JButton but4 = new JButton("\u0441\u0438\u043D\u044C\u043E");
+protected Random a=new Random();
+protected int b=a.nextInt(4);
+protected JPanel p1 = new JPanel();
+protected JPanel p2 = new JPanel();
+protected JPanel p3 = new JPanel();
+protected JPanel p4 = new JPanel();
+
+	private JPanel contentPane;
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					das7 frame = new das7();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public das7() {
+		setTitle("\u043D\u0438\u043A\u0432\u0430 \u0438\u0434\u0435\u044F\r\n");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 407, 269);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+b++;
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		final JButton but1 = new JButton("\u0436\u044A\u043B\u0442\u043E");
+		but1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		but1.setBackground(Color.YELLOW);
+		but1.addMouseListener(new MouseAdapter() {
+		
+			
+		});
+		but1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				while (b==1) {
+					b=a.nextInt(4);
+					b++;
+				}
+
+				but1.setVisible(false);
+				but2.setVisible(false);
+				but3.setVisible(false);
+				but4.setVisible(false);
+				p1.setVisible(false);
+				p2.setVisible(false);
+				p3.setVisible(false);
+				p4.setVisible(false);
+
+				switch(b) {
+				case 2:but2.setVisible(true);p2.setVisible(true);break;
+				case 3:but3.setVisible(true);p3.setVisible(true);break;
+				case 4:but4.setVisible(true);p4.setVisible(true);break;
+				}
+			
+			}
+		});
+		but1.setBounds(10, 10, 114, 38);
+		contentPane.add(but1);
+		but2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		but2.setBackground(Color.RED);
+		
+		but2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				while (b==2) {
+					b=a.nextInt(4);
+					b++;
+				}
+
+				but1.setVisible(false);
+				but2.setVisible(false);
+				but3.setVisible(false);
+				but4.setVisible(false);
+				p1.setVisible(false);
+				p2.setVisible(false);
+				p3.setVisible(false);
+				p4.setVisible(false);
+				switch(b) {
+				case 1:but1.setVisible(true);p1.setVisible(true);break;
+				case 3:but3.setVisible(true);p3.setVisible(true);break;
+				case 4:but4.setVisible(true);p4.setVisible(true);break;
+				}
+				
+				}
+
+		});
+		but2.setBounds(257, 10, 114, 38);
+		contentPane.add(but2);
+		but3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		but3.setBackground(Color.GREEN);
+		
+		
+		but3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				while (b==3) {
+					b=a.nextInt(4);
+					b++;
+				}
+
+				but1.setVisible(false);
+				but2.setVisible(false);
+				but3.setVisible(false);
+				but4.setVisible(false);
+				p1.setVisible(false);
+				p2.setVisible(false);
+				p3.setVisible(false);
+				p4.setVisible(false);
+				switch(b) {
+				case 2:but2.setVisible(true);p2.setVisible(true);break;
+				case 1:but1.setVisible(true);p1.setVisible(true);break;
+				case 4:but4.setVisible(true);p4.setVisible(true);break;
+				}
+			}
+		});
+		but3.setBounds(10, 171, 114, 38);
+		contentPane.add(but3);
+		but4.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		but4.setBackground(Color.CYAN);
+		
+		
+		but4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				while (b==4) {
+					b=a.nextInt(4);
+					b++;
+				}
+
+				but1.setVisible(false);
+				but2.setVisible(false);
+				but3.setVisible(false);
+				but4.setVisible(false);
+				p1.setVisible(false);
+				p2.setVisible(false);
+				p3.setVisible(false);
+				p4.setVisible(false);
+				switch(b) {
+				case 2:but2.setVisible(true);p2.setVisible(true);break;
+				case 3:but3.setVisible(true);p3.setVisible(true);break;
+				case 1:but1.setVisible(true);p1.setVisible(true);break;
+				}
+			}
+		});
+		but4.setBounds(257, 171,114, 38);
+		contentPane.add(but4);
+		
+
+		p1.setBackground(Color.YELLOW);
+		p1.setBounds(156, 75, 35, 35);
+		contentPane.add(p1);
+		
+		p2.setBackground(Color.RED);
+		p2.setBounds(191, 75, 35, 35);
+		
+		contentPane.add(p2);
+		
+		p3.setBackground(Color.GREEN);
+		p3.setBounds(156, 110, 35, 35);
+		
+		contentPane.add(p3);
+		
+		p4.setBackground(Color.CYAN);
+		p4.setBounds(191,110,35, 35);
+		
+		contentPane.add(p4);
+		
+		Checkbox c = new Checkbox("New check box");
+		c.setBounds(34, 90, 90, 21);
+		contentPane.add(c);
+		
+		
+
+		
+	}
+}
