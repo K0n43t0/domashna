@@ -202,9 +202,6 @@ b++;
 		
 		contentPane.add(p4);
 		
-		Checkbox c = new Checkbox("New check box");
-		c.setBounds(34, 90, 90, 21);
-		contentPane.add(c);
 		
 		
 
